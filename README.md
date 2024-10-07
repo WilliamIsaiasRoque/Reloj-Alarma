@@ -60,7 +60,7 @@ El proyecto está organizado en varios archivos esenciales:
 
 La interfaz se diseñó para ser atractiva y funcional. Utiliza un diseño limpio con elementos bien organizados que facilitan la interacción del usuario.
 
-![Interfaz del Reloj Digital](resources/digitalclock_ui.png)
+![Interfaz del Reloj Digital](img/diseñodelreloj.png)
 
 ## Código Fuente
 
