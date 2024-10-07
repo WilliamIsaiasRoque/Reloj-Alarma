@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/sounds"> <!-- Define un prefijo para acceder a los recursos de sonido -->
+        <file>alarm.wav</file> <!-- Especifica el archivo de sonido que se incluirá -->
+    </qresource>
+</RCC>
