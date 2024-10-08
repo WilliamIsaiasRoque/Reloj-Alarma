@@ -1,259 +1,356 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ui version="4.0">  <!-- Se define la versión de UI que se está utilizando, lo que es importante para la compatibilidad con diferentes versiones de Qt. -->
- <class>DigitalClock</class >  <!-- Nombre de la clase principal del widget que se va a crear. -->
- <widget class="QMainWindow" name="DigitalClock" >  <!-- Se especifica que el widget principal es una ventana principal (QMainWindow) con el nombre "DigitalClock". -->
-  <property name="geometry">  <!-- Se define la propiedad de geometría del widget, que especifica su posición y tamaño. -->
-   <rect>  <!-- Se usa un rectángulo para definir la geometría. -->
-    <x>0</x>  <!-- Posición X en la pantalla. -->
-    <y>0</y>  <!-- Posición Y en la pantalla. -->
-    <width>500</width>  <!-- Ancho de la ventana. -->
-    <height>800</height>  <!-- Altura de la ventana. -->
-   </rect>
+<?xml version="1.0" encoding="UTF-8"?> <!-- Declaración de versión XML y codificación -->
+<ui version="4.0"> <!-- Inicia el archivo de interfaz de usuario, especificando la versión -->
+ <class>DigitalClock</class> <!-- Define el nombre de la clase de la interfaz como "DigitalClock" -->
+ <widget class="QMainWindow" name="DigitalClock"> <!-- Crea una ventana principal (QMainWindow) con el nombre "DigitalClock" -->
+  <property name="geometry"> <!-- Define la geometría de la ventana -->
+   <rect> <!-- Inicia la definición de un rectángulo que especifica la posición y tamaño -->
+    <x>0</x> <!-- Posición en el eje X -->
+    <y>0</y> <!-- Posición en el eje Y -->
+    <width>523</width> <!-- Ancho de la ventana -->
+    <height>863</height> <!-- Altura de la ventana -->
+   </rect> <!-- Fin de la definición del rectángulo -->
   </property>
-  <property name="windowTitle">  <!-- Se establece el título de la ventana. -->
-   <string>RELOJ CON ALARMA GA!</string>  <!-- El título que se mostrará en la barra de título de la ventana. -->
+  <property name="windowTitle"> <!-- Define el título de la ventana -->
+   <string>RELOJ CON ALARMA Y CRONO V2!</string> <!-- Título de la ventana -->
   </property>
-  <property name="styleSheet">  <!-- Se define la hoja de estilo que se aplicará a los widgets. -->
-   <string notr="true">  <!-- Comienza la cadena de estilo, con el atributo 'notr' que indica que no se debe traducir. -->
-   QMainWindow {  <!-- Estilo específico para la clase QMainWindow. -->
-       background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 #1E1E2E, stop:1 #2D2D44);  <!-- Se define un degradado de color para el fondo de la ventana principal. -->
+  <property name="styleSheet"> <!-- Define el estilo de la ventana utilizando CSS -->
+   <string notr="true"> <!-- Indica que el texto no debe ser traducido -->
+   QMainWindow { <!-- Estilos para QMainWindow -->
+       background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 #1E1E2E, stop:1 #2D2D44); <!-- Gradiente de fondo -->
    }
 
-   QLabel {  <!-- Estilo para las etiquetas QLabel. -->
-       color: #ECE3A1;  <!-- Color del texto de las etiquetas. -->
-       font-family: 'Roboto', sans-serif;  <!-- Fuente utilizada para el texto. -->
-       font-size: 18px;  <!-- Tamaño de la fuente. -->
+   QLabel { <!-- Estilos para QLabel -->
+       color: #ECE3A1; <!-- Color del texto -->
+       font-family: 'Roboto', sans-serif; <!-- Tipo de fuente -->
+       font-size: 18px; <!-- Tamaño de fuente -->
    }
 
-   QPushButton {  <!-- Estilo para los botones QPushButton. -->
-       background-color: #45A29E;  <!-- Color de fondo del botón. -->
-       color: #FFFFFF;  <!-- Color del texto en el botón. -->
-       border: 2px solid #66FCF1;  <!-- Bordes del botón con un color específico. -->
-       padding: 12px 24px;  <!-- Espaciado interno del botón. -->
-       border-radius: 20px;  <!-- Bordes redondeados del botón. -->
-       font-size: 16px;  <!-- Tamaño de la fuente del texto en el botón. -->
-       font-weight: bold;  <!-- Peso de la fuente del texto en el botón. -->
-       transition: all 0.3s ease;  <!-- Efecto de transición suave para cambios en el botón. -->
+   QPushButton { <!-- Estilos para QPushButton -->
+       background-color: #45A29E; <!-- Color de fondo del botón -->
+       color: #FFFFFF; <!-- Color del texto del botón -->
+       border: 2px solid #66FCF1; <!-- Borde del botón -->
+       padding: 12px 24px; <!-- Espaciado interno del botón -->
+       border-radius: 20px; <!-- Esquinas redondeadas del botón -->
+       font-size: 16px; <!-- Tamaño de fuente del botón -->
+       font-weight: bold; <!-- Negrita para el texto del botón -->
+       transition: all 0.3s ease; <!-- Transición suave para efectos hover -->
    }
 
-   QPushButton:hover {  <!-- Estilo del botón cuando se pasa el mouse sobre él. -->
-       background-color: #66FCF1;  <!-- Cambia el color de fondo al pasar el mouse. -->
-       color: #1E1E2E;  <!-- Cambia el color del texto al pasar el mouse. -->
+   QPushButton:hover { <!-- Estilos para el botón al pasar el cursor (hover) -->
+       background-color: #66FCF1; <!-- Cambia el color de fondo al pasar el cursor -->
+       color: #1E1E2E; <!-- Cambia el color del texto al pasar el cursor -->
    }
 
-   QPushButton:pressed {  <!-- Estilo del botón cuando está presionado. -->
-       background-color: #33B1AC;  <!-- Cambia el color de fondo cuando se presiona el botón. -->
-       border-color: #45A29E;  <!-- Cambia el color del borde cuando se presiona el botón. -->
+   QPushButton:pressed { <!-- Estilos para el botón al ser presionado -->
+       background-color: #33B1AC; <!-- Cambia el color de fondo al presionar -->
+       border-color: #45A29E; <!-- Cambia el color del borde al presionar -->
    }
 
-   QLCDNumber {  <!-- Estilo para el LCD Number (número en pantalla). -->
-       background-color: rgba(236, 227, 161, 0.1);  <!-- Color de fondo del LCD con opacidad. -->
-       color: #66FCF1;  <!-- Color del texto en el LCD. -->
-       border: 4px solid #45A29E;  <!-- Bordes del LCD con un color específico. -->
-       border-radius: 25px;  <!-- Bordes redondeados del LCD. -->
-       font-size: 32px;  <!-- Tamaño de la fuente del texto en el LCD. -->
+   QLCDNumber { <!-- Estilos para QLCDNumber -->
+       background-color: rgba(236, 227, 161, 0.1); <!-- Color de fondo con transparencia -->
+       color: #66FCF1; <!-- Color del número -->
+       border: 4px solid #45A29E; <!-- Borde del QLCDNumber -->
+       border-radius: 25px; <!-- Esquinas redondeadas del QLCDNumber -->
+       font-size: 32px; <!-- Tamaño de fuente del número -->
    }
 
-   QTimeEdit {  <!-- Estilo para el widget de edición de tiempo. -->
-       background-color: #2D2D44;  <!-- Color de fondo del widget de edición de tiempo. -->
-       color: #ECE3A1;  <!-- Color del texto en el widget de edición de tiempo. -->
-       border: 2px solid #45A29E;  <!-- Bordes del widget de edición de tiempo. -->
-       padding: 10px;  <!-- Espaciado interno del widget. -->
-       border-radius: 15px;  <!-- Bordes redondeados del widget. -->
-       font-size: 16px;  <!-- Tamaño de la fuente del texto en el widget. -->
+   QTimeEdit { <!-- Estilos para QTimeEdit -->
+       background-color: #2D2D44; <!-- Color de fondo -->
+       color: #ECE3A1; <!-- Color del texto -->
+       border: 2px solid #45A29E; <!-- Borde de QTimeEdit -->
+       padding: 10px; <!-- Espaciado interno -->
+       border-radius: 15px; <!-- Esquinas redondeadas -->
+       font-size: 16px; <!-- Tamaño de fuente -->
    }
 
-   QTimeEdit::up-button, QTimeEdit::down-button {  <!-- Estilo para los botones de incremento y decremento en el widget de edición de tiempo. -->
-       width: 0;  <!-- Oculta el botón de incremento. -->
-       height: 0;  <!-- Oculta el botón de decremento. -->
+   QTimeEdit::up-button, QTimeEdit::down-button { <!-- Estilos para los botones de incremento y decremento de QTimeEdit -->
+       width: 0; <!-- Ancho de los botones a 0 (ocultos) -->
+       height: 0; <!-- Altura de los botones a 0 (ocultos) -->
    }
 
-   QTimeEdit::up-arrow, QTimeEdit::down-arrow {  <!-- Estilo para las flechas de los botones de incremento y decremento. -->
-       border: none;  <!-- Sin bordes para las flechas. -->
+   QTimeEdit::up-arrow, QTimeEdit::down-arrow { <!-- Estilos para las flechas de los botones de QTimeEdit -->
+       border: none; <!-- Sin borde para las flechas -->
    }
 
-   QLCDNumber:hover {  <!-- Estilo del LCD cuando se pasa el mouse sobre él. -->
-       border-color: #66FCF1;  <!-- Cambia el color del borde al pasar el mouse sobre el LCD. -->
+   QLCDNumber:hover { <!-- Estilos para QLCDNumber al pasar el cursor -->
+       border-color: #66FCF1; <!-- Cambia el color del borde al pasar el cursor -->
    }
-   </string>
+   </string> <!-- Fin de la definición del estilo -->
   </property>
-
-<!-- Definición de un widget central para la interfaz -->
-<widget class="QWidget" name="centralwidget">
-   <!-- Layout vertical que organiza los widgets de arriba hacia abajo -->
-   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0">
-    <!-- Propiedades de espaciado y márgenes para el layout -->
-    <property name="spacing">
-     <number>20</number> <!-- Espaciado entre los elementos del layout -->
+  <widget class="QWidget" name="centralwidget"> <!-- Crea un widget central dentro de la ventana principal -->
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0"> <!-- Define un layout vertical -->
+    <property name="spacing"> <!-- Define el espaciado entre los elementos del layout -->
+     <number>20</number> <!-- Espacio de 20 píxeles entre los elementos -->
     </property>
-    <property name="leftMargin">
-     <number>20</number> <!-- Margen izquierdo del layout -->
+    <property name="leftMargin"> <!-- Define el margen izquierdo del layout -->
+     <number>20</number> <!-- Margen de 20 píxeles -->
     </property>
-    <property name="topMargin">
-     <number>20</number> <!-- Margen superior del layout -->
+    <property name="topMargin"> <!-- Define el margen superior del layout -->
+     <number>20</number> <!-- Margen de 20 píxeles -->
     </property>
-    <property name="rightMargin">
-     <number>20</number> <!-- Margen derecho del layout -->
+    <property name="rightMargin"> <!-- Define el margen derecho del layout -->
+     <number>20</number> <!-- Margen de 20 píxeles -->
     </property>
-    <property name="bottomMargin">
-     <number>20</number> <!-- Margen inferior del layout -->
+    <property name="bottomMargin"> <!-- Define el margen inferior del layout -->
+     <number>20</number> <!-- Margen de 20 píxeles -->
     </property>
-
-    <!-- Sección para el título del reloj -->
-    <item>
-     <widget class="QLabel" name="titleLabel">
-      <property name="styleSheet">
-       <string notr="true">
-       QLabel {
-           color: #66FCF1; <!-- Color del texto del título -->
-           font-size: 24px; <!-- Tamaño de fuente del título -->
-           font-weight: bold; <!-- Grosor de fuente -->
+    <item> <!-- Inicia un item dentro del layout -->
+     <widget class="QLabel" name="titleLabel"> <!-- Crea un QLabel para el título -->
+      <property name="styleSheet"> <!-- Define el estilo para QLabel -->
+       <string notr="true"> <!-- Indica que el texto no debe ser traducido -->
+       QLabel { <!-- Estilos para QLabel -->
+           color: #66FCF1; <!-- Color del texto -->
+           font-size: 24px; <!-- Tamaño de fuente -->
+           font-weight: bold; <!-- Negrita para el texto -->
            letter-spacing: 2px; <!-- Espaciado entre letras -->
-           padding: 10px; <!-- Espaciado interno del QLabel -->
-           background-color: rgba(69, 162, 158, 0.2); <!-- Color de fondo semi-transparente -->
-           border-radius: 15px; <!-- Bordes redondeados -->
+           padding: 10px; <!-- Espaciado interno -->
+           background-color: rgba(69, 162, 158, 0.2); <!-- Color de fondo con transparencia -->
+           border-radius: 15px; <!-- Esquinas redondeadas -->
        }
-       </string>
+       </string> <!-- Fin de la definición del estilo -->
       </property>
-      <property name="text">
-       <string>RELOJ CON ALARMA GA!</string> <!-- Texto del título -->
+      <property name="text"> <!-- Define el texto del QLabel -->
+       <string>RELOJ CON ALARMA Y CRONO V2!</string> <!-- Texto a mostrar -->
       </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set> <!-- Alineación centrada del texto -->
+      <property name="alignment"> <!-- Define la alineación del texto -->
+       <set>Qt::AlignmentFlag::AlignCenter</set> <!-- Alineación centrada -->
       </property>
-     </widget>
+     </widget> <!-- Fin del QLabel -->
     </item>
-
-    <!-- Sección para mostrar la hora digital -->
     <item>
-     <widget class="QLCDNumber" name="digitalDisplay">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>140</height> <!-- Altura mínima del display digital -->
-       </size>
-      </property>
-      <property name="digitCount">
-       <number>8</number> <!-- Cantidad de dígitos a mostrar -->
-      </property>
-      <property name="segmentStyle">
-       <enum>QLCDNumber::SegmentStyle::Filled</enum> <!-- Estilo de segmentos llenos para el display -->
-      </property>
-     </widget>
+        <!-- Se define un widget de tipo QLCDNumber, que es un display digital -->
+        <widget class="QLCDNumber" name="digitalDisplay">
+            <property name="minimumSize">
+                <size>
+                    <width>0</width> <!-- Ancho mínimo del display, configurado en 0 -->
+                    <height>140</height> <!-- Altura mínima del display, configurada en 140 -->
+                </size>
+            </property>
+            <property name="digitCount">
+                <number>8</number> <!-- Número de dígitos que puede mostrar el display -->
+            </property>
+            <property name="segmentStyle">
+                <enum>QLCDNumber::SegmentStyle::Filled</enum> <!-- Estilo de segmento del display, en este caso, lleno -->
+            </property>
+        </widget>
     </item>
 
-    <!-- Sección para un reloj analógico -->
     <item alignment="Qt::AlignHCenter">
-     <widget class="QLabel" name="analogClock">
-      <property name="minimumSize">
-       <size>
-        <width>320</width>
-        <height>320</height> <!-- Tamaño mínimo del reloj analógico -->
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>320</width>
-        <height>320</height> <!-- Tamaño máximo del reloj analógico -->
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">
-       QLabel {
-           background-color: rgba(236, 227, 161, 0.05); <!-- Color de fondo semi-transparente para el reloj -->
-           border-radius: 160px; <!-- Bordes redondeados para el reloj -->
-           border: 3px solid #45A29E; <!-- Bordes del reloj -->
-       }
-       </string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set> <!-- Alineación centrada del reloj -->
-      </property>
-     </widget>
+        <!-- Se define un QLabel que actúa como un reloj analógico -->
+        <widget class="QLabel" name="analogClock">
+            <property name="minimumSize">
+                <size>
+                    <width>320</width> <!-- Ancho mínimo del QLabel, configurado en 320 -->
+                    <height>320</height> <!-- Altura mínima del QLabel, configurado en 320 -->
+                </size>
+            </property>
+            <property name="maximumSize">
+                <size>
+                    <width>320</width> <!-- Ancho máximo del QLabel, también configurado en 320 -->
+                    <height>320</height> <!-- Altura máxima del QLabel, también configurada en 320 -->
+                </size>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">
+                QLabel {
+                    background-color: rgba(236, 227, 161, 0.05); <!-- Color de fondo del QLabel con un efecto transparente -->
+                    border-radius: 160px; <!-- Bordes redondeados del QLabel, formando un círculo -->
+                    border: 3px solid #45A29E; <!-- Borde del QLabel con un color específico y grosor de 3 píxeles -->
+                }
+                </string>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set> <!-- Alineación del texto dentro del QLabel al centro -->
+            </property>
+        </widget>
     </item>
 
-    <!-- Sección para seleccionar la hora de la alarma -->
     <item>
-     <widget class="QTimeEdit" name="alarmTimeEdit">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>50</height> <!-- Altura mínima del selector de hora -->
-       </size>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set> <!-- Alineación centrada del selector de hora -->
-      </property>
-     </widget>
+        <!-- Se define un layout horizontal que contendrá un botón -->
+        <layout class="QHBoxLayout" name="toggleButtonLayout">
+            <item>
+                <!-- Se define un QPushButton para cambiar la funcionalidad -->
+                <widget class="QPushButton" name="toggleFunctionButton">
+                    <property name="minimumSize">
+                        <size>
+                            <width>0</width> <!-- Ancho mínimo del botón, configurado en 0 -->
+                            <height>50</height> <!-- Altura mínima del botón, configurada en 50 -->
+                        </size>
+                    </property>
+                    <property name="text">
+                        <string>Cambiar a Cronómetro</string> <!-- Texto que aparece en el botón -->
+                    </property>
+                </widget>
+            </item>
+        </layout>
     </item>
 
-    <!-- Sección para los botones de control de la alarma -->
     <item>
-     <layout class="QHBoxLayout" name="buttonLayout">
-      <property name="spacing">
-       <number>15</number> <!-- Espaciado entre los botones -->
-      </property>
-      <item>
-       <widget class="QPushButton" name="setAlarmButton">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>50</height> <!-- Altura mínima del botón para programar la alarma -->
-         </size>
-        </property>
-        <property name="text">
-         <string>Programar Alarma</string> <!-- Texto del botón para programar la alarma -->
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="stopAlarmButton">
-        <property name="enabled">
-         <bool>false</bool> <!-- Estado inicial del botón para cancelar la alarma (desactivado) -->
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>50</height> <!-- Altura mínima del botón para cancelar la alarma -->
-         </size>
-        </property>
-        <property name="text">
-         <string>Cancelar Alarma</string> <!-- Texto del botón para cancelar la alarma -->
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
+        <!-- Se define un QStackedWidget que permite mostrar diferentes páginas de contenido -->
+        <widget class="QStackedWidget" name="functionalityStack">
+            <property name="currentIndex">
+                <number>1</number> <!-- Índice de la página actual visible, en este caso, 1 (posiblemente la segunda página) -->
+            </property>
+            <widget class="QWidget" name="alarmPage">
+                <!-- Se define un layout vertical dentro de la página de alarma -->
+                <layout class="QVBoxLayout" name="alarmLayout">
+                    <item>
+                        <!-- Se define un QTimeEdit para establecer la hora de la alarma -->
+                        <widget class="QTimeEdit" name="alarmTimeEdit">
+                            <property name="minimumSize">
+                                <size>
+                                    <width>0</width> <!-- Ancho mínimo del QTimeEdit, configurado en 0 -->
+                                    <height>50</height> <!-- Altura mínima del QTimeEdit, configurada en 50 -->
+                                </size>
+                            </property>
+                            <property name="alignment">
+                                <set>Qt::AlignmentFlag::AlignCenter</set> <!-- Alineación del QTimeEdit al centro -->
+                            </property>
+                        </widget>
+                    </item>
 
-    <!-- Sección para mostrar el estado de la alarma -->
-    <item>
-     <widget class="QLabel" name="alarmStatusLabel">
-      <property name="styleSheet">
-       <string notr="true">
-       QLabel {
-           color: #66FCF1; <!-- Color del texto del estado de la alarma -->
-           font-weight: bold; <!-- Grosor de fuente para el estado de la alarma -->
-           font-size: 20px; <!-- Tamaño de fuente para el estado de la alarma -->
-           letter-spacing: 2px; <!-- Espaciado entre letras del estado -->
-           padding: 10px; <!-- Espaciado interno del QLabel -->
-           background-color: rgba(69, 162, 158, 0.2); <!-- Color de fondo semi-transparente para el estado -->
-           border-radius: 15px; <!-- Bordes redondeados para el QLabel -->
-       }
-       </string>
-      </property>
-      <property name="text">
-       <string>NO HAY ALARMA PROGRAMADA</string> <!-- Texto del estado inicial de la alarma -->
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set> <!-- Alineación centrada del estado de la alarma -->
-      </property>
+
+        <item>
+         <layout class="QHBoxLayout" name="alarmButtonLayout">
+          <property name="spacing">
+           <number>15</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="setAlarmButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Programar Alarma</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="stopAlarmButton">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Cancelar Alarma</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="alarmStatusLabel">
+          <property name="styleSheet">
+           <string notr="true">
+           QLabel {
+               color: #66FCF1;
+               font-weight: bold;
+               font-size: 20px;
+               letter-spacing: 2px;
+               padding: 10px;
+               background-color: rgba(69, 162, 158, 0.2);
+               border-radius: 15px;
+           }
+           </string>
+          </property>
+          <property name="text">
+           <string>NO HAY ALARMA PROGRAMADA</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="stopwatchPage">
+       <layout class="QVBoxLayout" name="stopwatchLayout">
+        <item>
+         <widget class="QLabel" name="stopwatchDisplay">
+          <property name="styleSheet">
+           <string notr="true">
+           QLabel {
+               color: #66FCF1;
+               font-weight: bold;
+               font-size: 36px;
+               letter-spacing: 2px;
+               padding: 10px;
+               background-color: rgba(69, 162, 158, 0.2);
+               border-radius: 15px;
+           }
+           </string>
+          </property>
+          <property name="text">
+           <string>00:00:00.000</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="stopwatchButtonLayout">
+          <property name="spacing">
+           <number>15</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="startStopwatchButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Iniciar</string>
+            </property>
+           </widget>
+          </item>
+
+
+          <item>
+           <widget class="QPushButton" name="stopStopwatchButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Detener</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="resetStopwatchButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Reiniciar</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
   </widget>
  </widget>
- <!-- Sección de recursos (vacía en este caso) -->
  <resources/>
- <!-- Conexiones de señal (vacías en este caso) -->
  <connections/>
 </ui>

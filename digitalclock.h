@@ -1,43 +1,60 @@
-#ifndef DIGITALCLOCK_H // Evita múltiples inclusiones del encabezado
-#define DIGITALCLOCK_H
+#ifndef DIGITALCLOCK_H  // Comprueba si DIGITALCLOCK_H no ha sido definido
+#define DIGITALCLOCK_H  // Define DIGITALCLOCK_H
 
-#include <QMainWindow> // Permite crear ventanas en aplicaciones Qt
-#include <QTimer> // Para realizar acciones a intervalos de tiempo
-#include <QTime> // Para trabajar con tiempos
-#include <QSoundEffect> // Para reproducir sonidos en la aplicación
+#include <QMainWindow>  // Incluye la clase QMainWindow
+#include <QTimer>  // Incluye la clase QTimer
+#include <QTime>  // Incluye la clase QTime
+#include <QSoundEffect>  // Incluye la clase QSoundEffect
+#include <QElapsedTimer>  // Incluye la clase QElapsedTimer
+#include <QStackedWidget>  // Incluye la clase QStackedWidget
 
-namespace Ui {
-class DigitalClock; // Clase de interfaz de usuario para el reloj digital
+namespace Ui {  // Declaración del espacio de nombres Ui
+class DigitalClock;  // Declaración de la clase DigitalClock
 }
 
-class DigitalClock : public QMainWindow // Clase DigitalClock que hereda de QMainWindow
+class DigitalClock : public QMainWindow  // La clase DigitalClock hereda de QMainWindow
 {
-    Q_OBJECT // Habilita señales y ranuras
+    Q_OBJECT  // Macro que habilita el uso de señales y ranuras en Qt
 
 public:
-    explicit DigitalClock(QWidget *parent = nullptr); // Constructor que inicializa la ventana
-    ~DigitalClock(); // Destructor que libera recursos
+    explicit DigitalClock(QWidget *parent = nullptr);  // Constructor que toma un puntero QWidget como parámetro
+    ~DigitalClock();  // Destructor
 
-private slots:
-    void updateTime(); // Actualiza la hora mostrada en el reloj
-    void setAlarm(); // Establece la hora de la alarma
-    void checkAlarm(); // Verifica si la alarma debe sonar
-    void stopAlarm(); // Detiene la alarma
+private slots:  // Sección para las ranuras (slots) de la clase
+    void updateTime();  // Ranura para actualizar la hora
+    void setAlarm();  // Ranura para establecer una alarma
+    void checkAlarm();  // Ranura para comprobar la alarma
+    void stopAlarm();  // Ranura para detener la alarma
 
-private:
-    void setupConnections(); // Establece conexiones entre señales y ranuras
-    void showAlarmMessage(); // Muestra un mensaje cuando la alarma suena
-    void updateAnalogClock(); // Actualiza la representación del reloj analógico
+    void startStopwatch();  // Ranura para iniciar el cronómetro
+    void stopStopwatch();  // Ranura para detener el cronómetro
+    void resetStopwatch();  // Ranura para reiniciar el cronómetro
+    void updateStopwatch();  // Ranura para actualizar el cronómetro
 
-    Ui::DigitalClock *ui; // Puntero a la clase de interfaz de usuario
-    QTimer *timer; // Puntero a QTimer para actualizar el tiempo
-    QTime currentTime; // Almacena la hora actual
-    QTime alarmTime; // Almacena la hora de la alarma
-    QSoundEffect *soundEffect; // Puntero a QSoundEffect para el sonido de la alarma
-    bool alarmActive; // Indica si la alarma está activa
+    void toggleFunctionality();  // Ranura para alternar entre funcionalidades
 
 private:
-    void centerWindow(); // Centra la ventana en la pantalla
+    void setupConnections();  // Método para configurar conexiones de señales y ranuras
+    void showAlarmMessage();  // Método para mostrar un mensaje de alarma
+    void updateAnalogClock();  // Método para actualizar el reloj analógico
+    void centerWindow();  // Método para centrar la ventana
+
+    Ui::DigitalClock *ui;  // Puntero a la interfaz de usuario
+    QTimer *timer;  // Puntero a un objeto QTimer para el reloj
+    QTime currentTime;  // Variable para almacenar la hora actual
+    QTime alarmTime;  // Variable para almacenar la hora de la alarma
+    QSoundEffect *soundEffect;  // Puntero a un objeto QSoundEffect para los sonidos de la alarma
+    bool alarmActive;  // Bandera para verificar si la alarma está activa
+
+    QTimer *stopwatchTimer;  // Puntero a un objeto QTimer para el cronómetro
+    QElapsedTimer elapsedTimer;  // Objeto QElapsedTimer para medir el tiempo transcurrido
+    qint64 elapsedTime;  // Variable para almacenar el tiempo transcurrido en el cronómetro
+    bool stopwatchRunning;  // Bandera para verificar si el cronómetro está en funcionamiento
+
+    bool isAlarmMode;  // Bandera para verificar si está en modo alarma
+protected:
+    void resizeEvent(QResizeEvent *event) override;  // Declarar la función resizeEvent para manejar el cambio de tamaño de la ventana
+
 };
 
-#endif // DIGITALCLOCK_H // Fin de la guardia de inclusión
+#endif // DIGITALCLOCK_H  // Fin de la declaración de inclusión para DIGITALCLOCK_H
