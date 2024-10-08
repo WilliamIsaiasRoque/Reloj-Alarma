@@ -90,15 +90,16 @@ La interfaz se ha diseñado para ser visualmente atractiva y fácil de navegar. 
 
 <div style="width: 45%;">
     <h4>Funcionamiento de la Alarma</h4>
-    <img src="/img/alarma.png" alt="Funcionamiento de la Alarma" style="width: 100%;">
+    <img src="/img/alarma.png" alt="Funcionamiento de la Alarma" style="width: 50%;">
 </div>
 
 <div style="width: 45%;">
     <h4>Funcionamiento del Cronómetro</h4>
-    <img src="/img/cronometro.png" alt="Funcionamiento del Cronómetro" style="width: 100%;">
+    <img src="/img/cronometro.png" alt="Funcionamiento del Cronómetro" style="width: 50%;">
 </div>
 
 </div>
+
 ---
 
 ## Conclusiones y Recomendaciones
