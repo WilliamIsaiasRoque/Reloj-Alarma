@@ -1,8 +1,18 @@
 
 # Informe del Proyecto: Reloj Digital con Alarma y Cronómetro
 
+---
+
+## Integrantes del Proyecto
+1. Chambi Velasquez, Rommel Abraham
+2. Garcia Apaza, Alan Jorge
+3. Ower Frank Lopez Arela
+4. Roque Quispe, William Isaias
+
+---
+
 ## Resumen
-Este informe presenta el desarrollo de un reloj digital interactivo que incluye funcionalidades de alarma y cronómetro. El proyecto se realizó utilizando la biblioteca Qt para C++, ofreciendo una interfaz gráfica intuitiva y fácil de usar. Este reloj digital no solo muestra la hora actual, sino que también permite a los usuarios establecer alarmas y utilizar un cronómetro para diversas actividades.
+Este informe presenta el desarrollo de un reloj digital interactivo que incluye funcionalidades de alarma y cronómetro. Nuestro proyecto se realizó utilizando la biblioteca Qt para C++, ofreciendo una interfaz gráfica intuitiva y fácil de usar. Este reloj digital no solo muestra la hora actual, sino que también permite a los usuarios establecer alarmas y utilizar un cronómetro para diversas actividades.
 
 ---
 
@@ -75,8 +85,20 @@ La interfaz se ha diseñado para ser visualmente atractiva y fácil de navegar. 
 - Un **reloj analógico** que complementa la visualización digital.
 
 ### Ejemplo de Interfaz
-![Interfaz del Reloj Digital](/img/diseñofinal.png)
 
+<div style="display: flex; justify-content: space-between;">
+
+<div style="width: 45%;">
+    <h4>Funcionamiento de la Alarma</h4>
+    <img src="/img/alarma.png" alt="Funcionamiento de la Alarma" style="width: 100%;">
+</div>
+
+<div style="width: 45%;">
+    <h4>Funcionamiento del Cronómetro</h4>
+    <img src="/img/cronometro.png" alt="Funcionamiento del Cronómetro" style="width: 100%;">
+</div>
+
+</div>
 ---
 
 ## Conclusiones y Recomendaciones
@@ -87,13 +109,7 @@ El desarrollo del reloj digital con alarma y cronómetro ha sido un éxito, logr
 
 ---
 
-## Agradecimientos
-Agradecemos a todos los involucrados en el desarrollo de este proyecto, así como a aquellos que brindaron apoyo y retroalimentación valiosa durante el proceso.
-
----
-
 ## Referencias
 - Documentación oficial de [Qt](https://doc.qt.io/qt-5/qtwidgets-index.html)
 - Tutoriales de C++ y Qt en [Qt Tutorials](https://www.qt.io/learn)
 ```
-
